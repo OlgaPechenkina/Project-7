@@ -44,7 +44,9 @@ public class StatsService {
         long avg = avgSales(sales);
         int months = 0;
         for (long sale : sales) {
-            months++;
+            if (sale < avg) {
+                months++;
+            }
         }
         return months;
     }
